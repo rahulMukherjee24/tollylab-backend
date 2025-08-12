@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 
 // Middleware
-app.use(cors({ origin: true }));
+app.use(cors({ origin: "*" })); // Allow all origins
 app.use(express.json());
 
 // ✅ Use Razorpay Keys from Vercel Environment Variables
@@ -31,7 +31,7 @@ app.post("/create-order", async (req, res) => {
     res.json(order);
   } catch (error) {
     console.error(error);
-    res.status(500).send("Error creating order");
+    res.status(500).send("Error creating order [index.js] ", err);
   }
 });
 

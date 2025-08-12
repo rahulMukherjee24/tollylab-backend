@@ -27,7 +27,7 @@ app.post("/create-order", async (req, res) => {
     res.json(order);
   } catch (err) {
     console.error(err);
-    res.status(500).send("Error creating order");
+    res.status(500).send("Error creating order [server.js] ", err);
   }
 });
 
