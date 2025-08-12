@@ -31,5 +31,9 @@ app.post("/create-order", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
 // Export as Firebase Function
 exports.api = functions.https.onRequest(app);
